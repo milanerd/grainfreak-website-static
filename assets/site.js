@@ -52,12 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
   var tabs = document.querySelectorAll('.tab');
   var contents = document.querySelectorAll('.tab-content');
   tabs.forEach(function (tab) {
+    tab.setAttribute('tabindex',tab.classList.contains('active') ? '0' : '-1');
     tab.addEventListener('click', function () {
       var target = this.dataset.tab;
-      tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
       contents.forEach(function (c) { c.classList.remove('active'); });
       this.classList.add('active');
       this.setAttribute('aria-selected', 'true');
+      this.setAttribute('tabindex', '0');
       var el = document.getElementById(target);
       if (el) el.classList.add('active');
     });
@@ -168,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send message';
+        submitBtn.innerHTML = 'Send message <span aria-hidden="true">↗</span>';
       }
     });
 
@@ -189,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         navAnchors.forEach(function (a) {
-          a.style.color = a.getAttribute('href') === '#' + entry.target.id ? 'var(--amber)' : '';
+          a.style.color = a.getAttribute('href') === '#' + entry.target.id ? 'var(--brand)' : ''; 
         });
       }
     });
