@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
         email: document.getElementById('contact-email').value.trim(),
         company: document.getElementById('contact-company').value.trim(),
         message: document.getElementById('contact-message').value.trim(),
-        interest: document.getElementById('contact-interest').value,
+        interest: document.getElementById('contact-interest')?.value || 'general',
       };
 
       try {
