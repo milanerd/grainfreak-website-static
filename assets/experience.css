@@ -24,7 +24,7 @@ body{background:var(--bg);color:var(--ink);font-feature-settings:'ss01' on}
 /* Navigation mirrors the airy editorial reference rather than a dashboard. */
 nav{background:rgba(250,249,244,.96);border-bottom:1px solid rgba(48,65,60,.08);box-shadow:none}
 .nav-row{height:80px;gap:24px}
-.brand-mark{width:34px;height:38px}
+.brand-mark{height:40px;display:block;object-fit:contain}
 .brand-wordmark{font-size:23px;letter-spacing:-1.15px;color:var(--ink);font-weight:800}
 .nav-links{gap:31px}
 .nav-links a{font-size:12px;font-weight:650;color:#65706D;white-space:nowrap}
@@ -277,7 +277,7 @@ footer a:hover{color:#E3C48E}
   #contact .cta-band{grid-template-columns:1fr;gap:37px}.contact-photo{max-width:500px}
 }
 @media(max-width:640px){
-  .wrap{padding-inline:20px}.brand-wordmark{font-size:22px}.brand-mark{width:31px;height:34px}
+  .wrap{padding-inline:20px}.brand-wordmark{font-size:22px}.brand-mark{height:34px}
   .hero{padding:53px 0 19px}.hero-badge{font-size:9px;letter-spacing:1.5px;margin-bottom:21px}
   .hero h1{font-size:clamp(40px,10vw,54px);line-height:1.11;letter-spacing:-2.2px;margin-bottom:18px}
   .hero-sub{font-size:14px;line-height:1.77;margin-bottom:23px}.hero-actions .btn{flex:1 1 150px;padding:11px 12px;font-size:12px}
